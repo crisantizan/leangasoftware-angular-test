@@ -14,6 +14,13 @@ const routes: Routes = [
         m => m.PostsListModule,
       ),
   },
+  {
+    path: 'post/:postId',
+    loadChildren: () =>
+      import('./pages/post-detail/post-detail.module').then(
+        m => m.PostDetailModule,
+      ),
+  },
 ];
 
 @NgModule({
