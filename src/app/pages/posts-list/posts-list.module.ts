@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { PostsListRoutingModule } from './posts-list-routing.module';
 import { PostsListComponent } from './posts-list.component';
 
-
 @NgModule({
   declarations: [PostsListComponent],
-  imports: [
-    CommonModule,
-    PostsListRoutingModule
-  ]
+  imports: [CommonModule, PostsListRoutingModule],
 })
-export class PostsListModule { }
+export class PostsListModule {}
