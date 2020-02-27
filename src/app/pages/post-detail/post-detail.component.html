@@ -1,1 +1,21 @@
-<p>post-detail works!</p>
+<div class="container">
+  <h1 class="title">Detail post with the ID {{ post.id }}</h1>
+
+  <mat-card>
+    <!-- for omit margin -->
+    <div>
+      <mat-card-title>
+        {{ post.title }}
+      </mat-card-title>
+      <mat-card-subtitle> user id {{ post.userId }} </mat-card-subtitle>
+    </div>
+
+    <mat-card-content>
+      <p>{{ post.body }}</p>
+    </mat-card-content>
+
+    <mat-card-actions>
+      <a [routerLink]="['/posts']" mat-button>BACK</a>
+    </mat-card-actions>
+  </mat-card>
+</div>

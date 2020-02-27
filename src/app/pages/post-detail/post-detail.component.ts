@@ -10,9 +10,11 @@ import { Post } from '../../models/shared.model';
 export class PostDetailComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
+  public post: Post;
+
   ngOnInit(): void {
     this.route.data.subscribe((data: { post: Post }) => {
-      console.log('data from resolver: ', data.post);
+      this.post = data.post;
     });
   }
 }
