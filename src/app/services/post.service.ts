@@ -23,7 +23,7 @@ export class PostService {
   }
 
   /** get all posts */
-  public getAll() {
-    return this.http.get(`${this.baseUrl}/posts`);
+  public getAll(): Observable<Post[]> {
+    return this.http.get<Post[]>(`${this.baseUrl}/posts`);
   }
 }

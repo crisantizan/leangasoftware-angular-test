@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Post } from '../../models/shared.model';
 
 @Component({
   selector: 'app-posts-list',
@@ -6,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts-list.component.scss'],
 })
 export class PostsListComponent implements OnInit {
-  constructor() {}
+  constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.route.data.subscribe((data: { posts: Post[] }) => {
+      console.log('data from resolver route: ', data.posts);
+    });
+  }
 }
