@@ -18,8 +18,10 @@ export class PostsListComponent implements OnInit {
 
   /** columns to display in datatable component */
   public displayedColumns = ['id', 'title', 'action'];
-
   public dataSource: MatTableDataSource<Post>;
+
+  /** indicates if a post is loading */
+  public loading = false;
 
   /** datatable paginator */
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -33,15 +35,12 @@ export class PostsListComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     });
-
-    // this.routeListening.loading$.subscribe(loading => {
-    //   console.log('loading: ', loading);
-    // });
   }
 
   /** go to full data of post */
   goToSinglePost(postId: number) {
-    // console.log('post id received: ', postId);
+    // show progress bar
+    this.loading = true;
     this.router.navigate(['/post', postId]);
   }
 }
