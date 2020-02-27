@@ -32,4 +32,6 @@ export class PostsListComponent implements OnInit {
       this.dataSource.sort = this.sort;
     });
   }
+
+  /** go to full data of post */
 }
