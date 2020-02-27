@@ -20,7 +20,18 @@
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef>DETALLES</th>
-      <td mat-cell *matCellDef><button mat-button color="primary" class="h">VER</button></td>
+      <td mat-cell *matCellDef="let element">
+        <button mat-button color="primary" (click)="goToSinglePost(element.id)">
+          VER
+        </button>
+        <!-- <a
+          [routerLink]="['/post', element.id]"
+          mat-button
+          color="primary"
+          class="h"
+          >VER</a
+        > -->
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
