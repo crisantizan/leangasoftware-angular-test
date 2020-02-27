@@ -12,7 +12,7 @@ export class PostsListResolverService implements Resolve<Post[]> {
   constructor(private service: PostService) {}
 
   resolve(): Post[] | Observable<Post[]> | Promise<Post[]> {
-    return this.service.getAll().pipe(
+    return this.service.posts.pipe(
       catchError(err => {
         console.error(err);
         return EMPTY;
