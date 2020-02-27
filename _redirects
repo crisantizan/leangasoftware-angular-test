@@ -1,0 +1,2 @@
+/posts /posts 200
+/post/ postId=:postId /post/:postId 301
