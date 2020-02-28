@@ -7,13 +7,19 @@
       <mat-card-title>
         {{ post.title }}
       </mat-card-title>
-      <mat-card-subtitle> user id {{ post.userId }} </mat-card-subtitle>
+      <mat-card-subtitle style="display: flex; justify-content: space-between;">
+        <span>User id: {{ post.userId }}</span>
+        <span>Last comment: {{ labelLastComment }}</span>
+      </mat-card-subtitle>
     </div>
 
     <mat-card-content>
       <p>{{ post.body }}</p>
 
-      <app-comments [postId]="post.id"></app-comments>
+      <app-comments
+        [postId]="post.id"
+        (lastCommentDate)="handleGetLastCommentDate($event)"
+      ></app-comments>
     </mat-card-content>
 
     <mat-card-actions>

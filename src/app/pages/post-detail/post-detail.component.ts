@@ -12,9 +12,19 @@ export class PostDetailComponent implements OnInit {
 
   public post: Post;
 
+  public lastCommentDate = '';
+
   ngOnInit(): void {
     this.route.data.subscribe((data: { post: Post }) => {
       this.post = data.post;
     });
+  }
+
+  get labelLastComment() {
+    return this.lastCommentDate || 'today';
+  }
+
+  handleGetLastCommentDate(date: string) {
+    this.lastCommentDate = date;
   }
 }

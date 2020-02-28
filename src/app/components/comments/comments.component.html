@@ -1,8 +1,20 @@
 <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 <mat-card class="mat-elevation-z0 comments-container">
   <h3 style="text-align: center;">Comments</h3>
+
+  <!-- emit date to parent component -->
+  <div class="button-emit-container">
+    <button
+      (click)="handleClickEmitData()"
+      mat-stroked-button
+      title="emit date to parent component"
+    >
+      Emit date
+    </button>
+  </div>
+
+  <!-- comments -->
   <mat-card-content>
-    <!-- comments -->
     <div
       *ngFor="let comment of comments; let i = index"
       [class]="generateClasses(i)"

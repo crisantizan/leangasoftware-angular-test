@@ -1,22 +1,28 @@
-.comment {
-  margin-bottom: 1rem;
-
-  &.border {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  :first-child {
-    font-weight: 500;
-    color: indigo;
-    text-decoration: none;
-  }
-
-  :last-child {
-    margin-left: 0.7rem;
-  }
-}
-
 .comments-container {
   border: 1px solid rgba($color: #000000, $alpha: 0.1);
   border-radius: 5px;
+
+  .button-emit-container {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  .comment {
+    margin-bottom: 1rem;
+
+    &.border {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    :first-child {
+      font-weight: 500;
+      color: indigo;
+      text-decoration: none;
+    }
+
+    :last-child {
+      margin-left: 0.7rem;
+    }
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { PostService } from '../../services/post.service';
 import { Comment } from '../../models/shared.model';
 
@@ -9,6 +9,9 @@ import { Comment } from '../../models/shared.model';
 })
 export class CommentsComponent implements OnInit {
   @Input() postId: number;
+
+  /** prop to emit */
+  @Output() lastCommentDate = new EventEmitter<string>();
 
   /** indicates if comments are loading */
   public loading: boolean = true;
@@ -27,5 +30,12 @@ export class CommentsComponent implements OnInit {
   /** generate classes for the HTML comment container */
   generateClasses(index: number) {
     return index + 1 !== this.comments.length ? 'comment border' : 'comment';
+  }
+
+  /** emit date to parent */
+  handleClickEmitData() {
+    const d = new Date();
+    const [date, time] = [d.toDateString(), d.toTimeString().substr(0, 5)];
+    this.lastCommentDate.emit(`${date} at ${time}`);
   }
 }
