@@ -1,0 +1,11 @@
+.powered {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  color: rgba($color: #000000, $alpha: .5);
+  font-size: 12px;
+
+  a {
+    color: rgba($color: #000000, $alpha: .6);
+  }
+}
