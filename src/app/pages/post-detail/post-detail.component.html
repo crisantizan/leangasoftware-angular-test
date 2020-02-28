@@ -12,6 +12,8 @@
 
     <mat-card-content>
       <p>{{ post.body }}</p>
+
+      <app-comments [postId]="post.id"></app-comments>
     </mat-card-content>
 
     <mat-card-actions>

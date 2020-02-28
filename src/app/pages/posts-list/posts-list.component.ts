@@ -20,7 +20,7 @@ export class PostsListComponent implements OnInit {
   public displayedColumns = ['id', 'title', 'action'];
   public dataSource: MatTableDataSource<Post>;
 
-  /** indicates if a post is loading */
+  /** indicates if post are loading */
   public loading = false;
 
   /** datatable paginator */

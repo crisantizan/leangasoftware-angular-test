@@ -1,0 +1,14 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<mat-card class="mat-elevation-z0 comments-container">
+  <h3 style="text-align: center;">Comments</h3>
+  <mat-card-content>
+    <!-- comments -->
+    <div
+      *ngFor="let comment of comments; let i = index"
+      [class]="generateClasses(i)"
+    >
+      <a href="javascript:void(0)">@{{ comment.name }}</a>
+      <p>{{ comment.body }}</p>
+    </div>
+  </mat-card-content>
+</mat-card>
