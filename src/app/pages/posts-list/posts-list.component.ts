@@ -23,6 +23,9 @@ export class PostsListComponent implements OnInit {
   /** indicates if post are loading */
   public loading = false;
 
+  /** display backdrop the first time when post are loaded */
+  public pageLoading = true;
+
   /** datatable paginator */
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
@@ -31,6 +34,7 @@ export class PostsListComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.data.subscribe((data: { posts: Post[] }) => {
+      this.pageLoading = false;
       this.dataSource = new MatTableDataSource(data.posts);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
