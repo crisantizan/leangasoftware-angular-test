@@ -1,2 +1,5 @@
-<app-github-link></app-github-link>
+<div class="loader-backdrop" *ngIf="firstRender">
+  <div class="loader">Loading...</div>
+</div>
 <router-outlet></router-outlet>
+<app-github-link *ngIf="!firstRender"></app-github-link>

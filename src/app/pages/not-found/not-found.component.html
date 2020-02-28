@@ -2,7 +2,7 @@
   <h1>Sorry...</h1>
   <mat-icon svgIcon="404"></mat-icon>
   <h2>The page you were loooking for does't exists</h2>
-  <button mat-stroked-button color="primary" [routerLink]="['/posts']">
+  <button mat-stroked-button color="primary" (click)="backToHome()">
     BACK HOME PAGE
   </button>
 </div>

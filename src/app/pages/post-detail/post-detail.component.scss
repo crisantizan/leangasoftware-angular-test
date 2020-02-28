@@ -5,3 +5,9 @@
     margin: 0 auto;
   }
 }
+.progress-bar-container {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 150;
+}

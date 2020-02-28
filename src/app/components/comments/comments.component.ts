@@ -13,8 +13,8 @@ export class CommentsComponent implements OnInit {
   /** prop to emit */
   @Output() lastCommentDate = new EventEmitter<string>();
 
-  /** indicates if comments are loading */
-  public loading: boolean = true;
+  /** emit to paren that data has been received */
+  @Output() loading = new EventEmitter<boolean>();
 
   public comments: Comment[] = [];
 
@@ -23,7 +23,8 @@ export class CommentsComponent implements OnInit {
   ngOnInit(): void {
     this.postService.getPostComments(this.postId).subscribe(comments => {
       this.comments = comments;
-      this.loading = false;
+      // stop parent progressbar
+      this.loading.emit(false);
     });
   }
 

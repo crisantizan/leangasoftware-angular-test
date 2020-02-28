@@ -24,7 +24,8 @@ const routes: Routes = [
   },
   {
     path: '**',
-    component: NotFoundComponent
+    data: { noRender: true },
+    component: NotFoundComponent,
   }
 ];
 

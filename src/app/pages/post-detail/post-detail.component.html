@@ -1,6 +1,13 @@
+<!-- progressbar fixed -->
+<div class="progress-bar-container">
+  <mat-progress-bar
+    mode="indeterminate"
+    *ngIf="showProgressBar"
+  ></mat-progress-bar>
+</div>
+
 <div class="container">
   <h1 class="title">Detail post with the ID {{ post.id }}</h1>
-
   <mat-card class="mat-elevation-z8">
     <!-- for omit margin -->
     <div>
@@ -19,11 +26,18 @@
       <app-comments
         [postId]="post.id"
         (lastCommentDate)="handleGetLastCommentDate($event)"
+        (loading)="handleLoadingComments($event)"
       ></app-comments>
     </mat-card-content>
 
     <mat-card-actions>
-      <a [routerLink]="['/posts']" mat-button>BACK</a>
+      <button
+        (click)="handleClickBack()"
+        [disabled]="showProgressBar"
+        mat-button
+      >
+        BACK
+      </button>
     </mat-card-actions>
   </mat-card>
 </div>
