@@ -1,0 +1,25 @@
+.container {
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    color: red;
+    text-align: center;
+  }
+
+  .mat-icon {
+    display: block;
+    margin: 0 auto;
+    height: 150px;
+    width: 150px;
+  }
+
+  h2 {
+    margin-top: 1rem;
+    text-align: center;
+    color: rgba($color: #000000, $alpha: 0.5);
+  }
+}
