@@ -5,14 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GithubLinkComponent } from './components/github-link/github-link.component';
+import { MaterialModule } from './material.module';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, GithubLinkComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    MaterialModule,
   ],
   bootstrap: [AppComponent],
 })

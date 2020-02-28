@@ -1,0 +1,11 @@
+.github-button-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  z-index: 200;
+  a {
+    background-color: #000;
+    color: #fff;
+  }
+}
